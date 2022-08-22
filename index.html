@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+         <meta http-equiv=""X-UA-Compatible" content=""ie=edge">
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <link rel="stylesheet" href="style.css">
+         
+         <title>Document</title>
+         
+    </head>
+    <body>
+          
+          
+          
+          
+        <!-- body for navigation -->
+      
+        <div>
+          <nav>
+            
+            <ul>
+              
+                    <li><button onclick="myFunction1()" >business</button></li>
+              <li><button onclick="myFunction2()" >entertainment</button></li>
+                    <li><button onclick="myFunction3()" >health</button></li>
+                    <li><button onclick="myFunction4()" >politics</button></li>
+                    <li><button onclick="myFunction5()" >science</button></li>
+                    <li><button onclick="myFunction6()" >sports</button></li>
+                    <li><button onclick="myFunction7()" >technology</button></li>
+                    <li><button onclick="myFunction8()" >top</button></li>
+                    <li><button onclick="myFunction9()" >world</button></li>
+        
+                    
+            </ul>
+          </nav>
+            <br>
+            <br>
+            <br>
+            <br>
+            </div>
+            <!-- navigation body end here -->
+            <!-- body for search bar starts here -->
+        <form>
+        
+          <div class="input-field">
+              <i class="material-icons prefix">public</i>
+              <input type="text" id="searchquery">
+              <label>Find what's happeing in the US......</label>
+          </div>
+          
+          <div class="row">
+             <input type="submit" id="searchbtn" class="btn col m2 s12" value="search">
+             <input type="reset" id="searchbtn1" class="btn col m2 s12 red right" value="clear"  style="margin-top:3px;">
+          </div>
+          
+      </form>
+        
+    
+  <!-- body for search bar ends here -->
+
+<!-- body for news card starts here -->
+
+        <div class="container">
+         
+            <div class="row">
+                
+                <div id="newsResults"></div>
+            </div>
+    
+            <div id="loader">
+                <div class="progress">
+                    <div class="indeterminate"></div>
+                </div>
+            </div>
+    
+        </div>
+   <!-- body for news card ends here --> 
+      
+    
+	
+	 <script src="script.js"></script>
+
+    
+    </body>
+</html>
+
