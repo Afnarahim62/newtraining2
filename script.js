@@ -216,10 +216,12 @@ function newsfetching(latestNews){
           console.log(url1);
           if(query !== ""){
             fetching(url1); 
-
-
-  
-    }
+         }
+              else{
+              let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'> Search bar is Empty!!!!! </div>`;
+               $("#newsResults").html(noNews);
+            
+            }
         });
 // js for search bar ends here
 
