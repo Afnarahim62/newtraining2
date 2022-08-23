@@ -235,6 +235,6 @@ function newsfetching(latestNews){
       let popup = document.getElementById(`popup${i}`);
       popup.classList.remove("open-popup");
       console.log("close pop up")
-    
+    }
 
 
