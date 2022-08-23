@@ -81,7 +81,7 @@ function showWeatherData (data){
     //  js for navigation bar starts here
      function myFunction1() {
                 let name="business";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
 }
 
@@ -89,37 +89,37 @@ function showWeatherData (data){
         
 function myFunction9() {
                 let name="world";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
 }
         
 function myFunction2() {
     let name="entertainment";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
 }
         
 function myFunction3() {
     let name="health";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
 }
         
 function myFunction4() {
                 let name="politics"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
 }
         
 function myFunction5() {
                 let name="science"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
 }
         
 function myFunction6() {
                 let name="sports"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
           
           
@@ -127,13 +127,13 @@ function myFunction6() {
         
 function myFunction7() {
                 let name="technology"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
 }
         
 function myFunction8() {
                 let name="top"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
           fetching(url1); 
 }
 
@@ -143,7 +143,7 @@ function myFunction8() {
      fetching(url1); 
         function fetching(url1){
                 if(url1==" "){
-                    url="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&language=en";
+                    url="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&language=en";
                 }else{
                     url=url1;
 
@@ -211,7 +211,7 @@ function newsfetching(latestNews){
           let query = $("#searchquery").val();
          
          
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&q="+query+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&q="+query+"&language=en";
          
           console.log(url1);
           if(query !== ""){
