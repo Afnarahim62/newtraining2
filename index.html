@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+    <div class="top">
     <!-- header html  -->
     <header>
     <div class="content1">
@@ -41,18 +45,71 @@
     </div>
 </div>
 </header>
-<hr>
+
+ <!-- body for navigation -->
+      
+ <div>
+    <nav>
+      
+      <ul>
+        
+              <li><button onclick="myFunction1()" >business</button></li>
+        <li><button onclick="myFunction2()" >entertainment</button></li>
+              <li><button onclick="myFunction3()" >health</button></li>
+              <li><button onclick="myFunction4()" >politics</button></li>
+              <li><button onclick="myFunction5()" >science</button></li>
+              <li><button onclick="myFunction6()" >sports</button></li>
+              <li><button onclick="myFunction7()" >technology</button></li>
+              <li><button onclick="myFunction8()" >top</button></li>
+              <li><button onclick="myFunction9()" >world</button></li>
+  
+              
+      </ul>
+    </nav>
+      <br>
+      </div>
+      </div>
+      <!-- navigation body end here -->
+      <!-- body for search bar starts here -->
+  <form>
+  
+    <div class="input-field">
+        <i class="material-icons prefix">public</i>
+        <input type="text" id="searchquery">
+        <label>Find what's happeing in the US......</label>
+    </div>
+    
+    <div class="row">
+       <input type="submit" id="searchbtn" class="btn col m2 s12" value="search">
+       <input type="reset" id="searchbtn1" class="btn col m2 s12 red right" value="clear"  style="margin-top:3px;">
+    </div>
+    
+</form>
+  
+
+<!-- body for search bar ends here -->
+
+<!-- body for news card starts here -->
+
+  <div class="container1">
+   
+      <div class="row">
+          
+          <div id="newsResults"></div>
+      </div>
+
+      <div id="loader">
+          <div class="progress">
+              <div class="indeterminate"></div>
+          </div>
+      </div>
+
+  </div>
+<!-- body for news card ends here --> 
     <!-- weather html  -->
     <div>
     <div class="future-forecast">
-        <!-- <div class="ctwitemss" id="current-temp">
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="other">
-                <div class="day">Monday</div>
-                <div class="temp">Night - 25.6&#176; C</div>
-                <div class="temp">Day - 35.6&#176; C</div>
-            </div>
-        </div>  -->
+        
         <div>
         <div class="weather-forecast" id="weather-forecast">
             <div class="weather-forecast-item">
@@ -90,7 +147,7 @@
     <!-- weather html end here  -->
     <!-- weather js  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
-    <script src="script.js"></script>
+    
     <!-- weather js end here  -->
     <!-- footer html  -->
 <div class="footerdown">
@@ -107,5 +164,7 @@
 </div>
 </div>
 <!-- footer html ends here  -->
+<script src="script.js"></script>
 </body>
 </html>
+
