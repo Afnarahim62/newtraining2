@@ -93,8 +93,8 @@
 
 .future-forecast{
     background:black;
-    padding: 33px;
-    padding-top: 10px;
+    padding: 25px;
+    padding-top: 5px;
     position: fixed;
     bottom: 0;
     display: flex;
