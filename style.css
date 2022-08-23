@@ -1,5 +1,50 @@
+/* search bar  */
 
-
+form{
+    background: #fff;
+      width: 0px;
+      height: 40px;
+      display: flex;
+  
+  }
+  form input{
+    flex: 1;
+  
+   }
+  
+  #searchbtn{
+    background: black;
+      padding: 5px 18px;
+      border: none;
+      outline: none;
+      color: #fff;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-size: x-large;
+      margin-right: 13px;
+      margin-left: 5px;
+      border-radius: 10px;
+  }
+  #searchquery{
+    padding: 10px;
+    font-size:x-large;
+    border-radius: 10px;
+    
+  }
+  
+  #searchbtn1{
+    background: black;
+      padding: 5px 18px;
+      border: none;
+      outline: none;
+      color: #fff;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-size: x-large;
+      margin-right: 13px;
+      margin-left: -9px;
+      border-radius: 10px;
+  }
     .popup {
       width: 800px;
       background: #ffffff;
@@ -417,12 +462,13 @@ nav{	margin:0px;
 	padding:0px;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
-	width: 100%;
+	width: auto;
 	height: 65px;
 	
 	line-height: 75px;
 	padding:0px 10px;
-	
+    /* margin-left: -264px;
+	 */
 }
 
 nav ul{
@@ -436,7 +482,7 @@ nav ul li{
 	display: inline-block;
 	list-style: none;
     margin:0px;
-	padding:12px;
+	padding:7px;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 }
