@@ -2,132 +2,171 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="" width=device-width, initial-scale="1.0">
-  <meta http-equiv="" X-UA-Compatible" content="" ie=edge">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css/materialize.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="style.css">
-
-
   <title>NEWSLETTER</title>
-  <style>
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-
 <body>
-  <div class="input-group">
-    <input type="search" id="searchquery" class="form-control rounded" placeholder="Search" aria-label="Search"
-      aria-describedby="search-addon" />
-    <button id="searchbtn" style="margin-left: 5px;" type="submit" class="btn btn-outline-primary"
-      value="search">Search</button>
-  </div>
+    <div class="top">
+    <!-- header html  -->
+    <header>
+    <div class="content1">
+        <h1 class="header">News Letter</h1>
+        <!-- header html ends here  -->
+    <!-- date and time html  -->
+    <div class="container">
+        <div class="current-info">
+            <div class="date-container">
+                <div class="time" id="time">
+                    12:30 <span id="am-pm">PM</span>
+                </div>
+                <div class="date" id="date">
+                    Monday, 25 May
+                </div>
 
-  <div id="loader" style="display:none;">
-    <div class="progress">
-      <div class="indeterminate"></div>
+                <div class="others" id="current-weather-items"></div>
+            </div>
+        </div>  
     </div>
-  </div>
-
-  <div class="row">
-    <div id="newsResults"></div>
-  </div>
-
-
-
-
-  <div class="container">
-
-    <div class="row">
-
-      <div id="newsResults"></div>
+    <div class="ctwitemss" id="current-temp">
+        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+        <div class="other">
+            <div class="day">Monday</div>
+            <div class="temp">Night - 25.6&#176; C</div>
+            <div class="temp">Day - 35.6&#176; C</div>
+        </div>
     </div>
+</div>
+</header>
 
-    <div id="loader">
-      <div class="progress">
-        <div class="indeterminate"></div>
-      </div>
-    </div>
-
-  </div>
-
-  <script>
-
-    window.onload = function () {
-      let url = "https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&language=en";
-      //let url = './data.json';
-      newspapper(url);
-      function newspapper(url) {
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-
-            let output = "";
-            let latestNews = data.results;
-            console.log(latestNews);
-            newsfetching(latestNews);
-            function newsfetching(latestNews) {
-              for (var i in latestNews) {
-                output += `
-        <div class="col l3 m6 s12">
-          <div class="cardmediumhoverable">
+ <!-- body for navigation -->
+      
+ <div>
+    <nav>
+      
+      <ul>
         
-            <div class="card-image" >
-              <img src="${(latestNews[i].image_url == null) ? ("noimage.jpg") : (latestNews[i].image_url)}" style="width:400px;height:auto;"/> 
-             
+              <li><button onclick="myFunction1()" >business</button></li>
+        <li><button onclick="myFunction2()" >entertainment</button></li>
+              <li><button onclick="myFunction3()" >health</button></li>
+              <li><button onclick="myFunction4()" >politics</button></li>
+              <li><button onclick="myFunction5()" >science</button></li>
+              <li><button onclick="myFunction6()" >sports</button></li>
+              <li><button onclick="myFunction7()" >technology</button></li>
+              <li><button onclick="myFunction8()" >top</button></li>
+              <li><button onclick="myFunction9()" >world</button></li>
+  
+              
+      </ul>
+    </nav>
+      <br>
+      </div>
+      </div>
+      <!-- navigation body end here -->
+      <!-- body for search bar starts here -->
+  <form>
+  
+    <div class="input-field">
+        <i class="material-icons prefix">public</i>
+        <input type="text" id="searchquery">
+        <label>Find what's happeing in the US......</label>
+    </div>
+    
+    <div class="row">
+       <input type="submit" id="searchbtn" class="btn col m2 s12" value="search">
+       <input type="reset" id="searchbtn1" class="btn col m2 s12 red right" value="clear"  style="margin-top:3px;">
+    </div>
+    
+</form>
+  
+
+<!-- body for search bar ends here -->
+
+<!-- body for news card starts here -->
+
+  <div class="container1">
+   
+      <div class="row">
+          
+          <div id="newsResults"></div>
+      </div>
+
+      <div id="loader">
+          <div class="progress">
+              <div class="indeterminate"></div>
           </div>
-            <div class="card-content" style="width:70%; margin-left:50px">
-              <h3 style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;">${latestNews[i].title}</h3>
-            <p><i>${(latestNews[i].pubDate == null) ? ("--------") : (latestNews[i].pubDate)}</i></p>
-            
-             <p>Creator: <i>${(latestNews[i].creator == null) ? ("--------") : (latestNews[i].creator)}</i></p>
-              <p><b>Description</b>: ${(latestNews[i].description == null) ? ("-------") : (latestNews[i].description)}</p>
-            
-              <button class="readmore-btn" id=pop-up${i} onclick="openPopup(${i})"  >Read More >></button>
-                </div>
-               </div>
-          </div>
-          <div class="popup" id=popup${i}>
-              <b><h style="font-family: Arial, Helvetica, sans-serif; font-size: 35px;">${latestNews[i].title}</h></b><br><br>
-              <img src="${(latestNews[i].image_url == null) ? ("noimage.jpg") : (latestNews[i].image_url)}" style="width:400px;height:auto;"/> <br>
-                <p>${(latestNews[i].content == null) ? ("Not Content") : (latestNews[i].content)}</p><br>
-                <button class="close-btn" type="button" style="background-color: #FF0000;
-  padding: 16px 20px;
-  cursor: pointer;
-  border-radius: 10px;" onclick="closePopup(${i})">Close</button>
-                </div>
-                
- 
-        `;
-              }
-              if (output !== "") {
-                $("#newsResults").html(output);
-              }
-            }
+      </div>
 
-
-          }
-
-          );
-      }
-    }
-
-
-    function openPopup(i) {
-      let popup = document.getElementById(`popup${i}`);
-      popup.classList.add("open-popup");
-      console.log(popup)
-    }
-
-
-    function closePopup(i) {
-      let popup = document.getElementById(`popup${i}`);
-      popup.classList.remove("open-popup");
-      console.log("close pop up")
-
-    }
-  </script>
+  </div>
+<!-- body for news card ends here --> 
+    <!-- weather html  -->
+    <div>
+    <div class="future-forecast">
+        
+        <div>
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                <div class="day">Tue</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Wed</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Thur</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Fri</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Sat</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+        </div>
+    </div>
+    <!-- weather html end here  -->
+    <!-- weather js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    
+    <!-- weather js end here  -->
+    <!-- footer html  -->
+<div class="footerdown">
+    <footer>
+        <div class="footer-bottom">
+            <p>copyright &copy;2022 <a href="https://www.terrificminds.com/">Terrific Minds</a>  </p>
+                    <div class="footer-menu">
+                      <ul class="f-menu">
+                        <li><a href="mailto:rahees@terrificminds.com">Contact Us</a></li>
+                      </ul>
+                    </div>
+        </div>
+    </footer>
+</div>
+</div>
+<!-- footer html ends here  -->
+<script src="script.js"></script>
 </body>
-
 </html>
+
+
