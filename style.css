@@ -1,7 +1,7 @@
-           html{
-    scroll-behavior: smooth;
-}
-/* search bar css  */
+           
+
+
+
 form{
     background: #fff;
       width: 0px;
@@ -47,7 +47,9 @@ form{
       margin-left: -9px;
       border-radius: 10px;
   }
-  /* search bar css ends  */
+/*    search bar css ends  */
+
+
     .popup {
       width: 800px;
       background: #ffffff;
@@ -510,27 +512,4 @@ nav ul li .active{
 	opacity: 0.80;
 }
 /* css for navigation bar finished */
- /* scroll bar css  */
-.upbar{
-
-    margin: 0;
-    padding: 0;
-  }
-  .gotopbtn{
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    background:black;
-    bottom: 40px;
-    right: 50px;
-    text-decoration: none;
-    text-align: center;
-    line-height: 50px;
-    color: white;
-    font-size: 22px;
-    border-radius: 30px;
-    
-  }
-   /* scroll bar css ends  */ 
            
-
