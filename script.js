@@ -1,5 +1,5 @@
 
-
+let newapi="pub_10316cb54031f0ba55b0468a1337c21dc0bbb";
 // weather and date js starts here 
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
@@ -79,71 +79,71 @@ function showWeatherData (data){
 
 
     //  js for navigation bar starts here
-     function myFunction1() {
+     function myFunction1(newapi) {
                 let name="business";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
 
 
         
-function myFunction9() {
+function myFunction9(newapi) {
                 let name="world";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction2() {
+function myFunction2(newapi) {
     let name="entertainment";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction3() {
+function myFunction3(newapi) {
     let name="health";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction4() {
+function myFunction4(newapi) {
                 let name="politics"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction5() {
+function myFunction5(newapi) {
                 let name="science"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction6() {
+function myFunction6(newapi) {
                 let name="sports"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
           
           
 }
         
-function myFunction7() {
+function myFunction7(newapi) {
                 let name="technology"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction8() {
+function myFunction8(newapi) {
                 let name="top"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
 
 // js for navigation ends here
 // news card fetching starts here
         let url1=" ";
-     fetching(url1); 
-        function fetching(url1){
+     fetching(url1,newapi); 
+        function fetching(url1,newapi){
                 if(url1==" "){
-                    url="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&language=en";
+                    url="https://newsdata.io/api/1/news?apikey="+newapi+"&language=en";
                 }else{
                     url=url1;
 
@@ -211,17 +211,20 @@ function newsfetching(latestNews){
           let query = $("#searchquery").val();
          
          
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&q="+query+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&q="+query+"&language=en";
          
           console.log(url1);
           if(query !== ""){
-            fetching(url1); 
-         }
+            fetching(url1,newapi); 
+          }
               else{
-              let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'> Search bar is Empty!!!!! </div>`;
-               $("#newsResults").html(noNews);
-            
-            }
+                  let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'>This news isn't available. Sorry about that.<br>Try searching for something else </div>`;
+                   $("#newsResults").html(noNews);
+                
+                }
+
+  
+    
         });
 // js for search bar ends here
 
@@ -238,6 +241,5 @@ function newsfetching(latestNews){
       popup.classList.remove("open-popup");
       console.log("close pop up")
     }
-
 
 
