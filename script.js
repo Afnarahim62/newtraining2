@@ -216,10 +216,15 @@ function newsfetching(latestNews){
           console.log(url1);
           if(query !== ""){
             fetching(url1,newapi); 
-
+          }
+              else{
+                  let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'>This news isn't available. Sorry about that.<br>Try searching for something else </div>`;
+                   $("#newsResults").html(noNews);
+                
+                }
 
   
-    }
+    
         });
 // js for search bar ends here
 
