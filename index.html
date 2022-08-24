@@ -13,9 +13,73 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <style>
+
+.pagination {
+margin: 0;
+
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px;
+}
+.pagination ul{
+
+display: flex;
+flex-wrap: wrap;
+background: #fff;
+padding: 8px;
+border-radius: 50px;
+box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+}
+.pagination ul li{
+color: black;
+list-style: none;
+line-height: 45px;
+text-align: center;
+font-size: 18px;
+font-weight: 500;
+cursor: pointer;
+user-select: none;
+transition: all 0.3s ease;
+}
+.pagination ul li.numb{
+list-style: none;
+height: 45px;
+width: 45px;
+margin: 0 3px;
+line-height: 45px;
+border-radius: 50%;
+}
+.pagination ul li.numb.first{
+margin: 0px 3px 0 -5px;
+}
+.pagination ul li.numb.last{
+margin: 0px -5px 0 3px;
+}
+.pagination ul li.dots{
+font-size: 22px;
+cursor: default;
+}
+.pagination ul li.btn{
+padding: 0 20px;
+border-radius: 50px;
+}
+.pagination li.active,
+.pagination ul li.numb:hover,
+.pagination ul li:first-child:hover,
+.pagination ul li:last-child:hover{
+color: #fff;
+background: #20B2AA;
+}
+/* css for pagination */
+    </style>
 </head>
-<body>
+<body >
     <div class="top">
     <!-- header html  -->
     <header>
@@ -73,6 +137,7 @@
       </div>
       <!-- navigation body end here -->
       <!-- body for search bar starts here -->
+
      
 <div class="input-field">
 <form>
@@ -80,6 +145,7 @@
     <button id="searchbtn" style="margin-left: 5px;" type="submit" value="search">Search</button></form>
   </div>
   
+
 
 <!-- body for search bar ends here -->
 
@@ -105,6 +171,54 @@
     <a class="gotopbtn" href="#"> <i class="fas fa-arrow-up"></i> </a>
 <div>
     <!-- scroll button html ends  -->
+
+ <!-- body of pagination starts -->
+ <div class="pagination">
+    <ul> <!--pages or li are comes from javascript --> </ul>
+  </div>
+  <!-- body of pagination ends here -->
+    <!-- weather html  -->
+    <div>
+    <div class="future-forecast">
+        
+        <div>
+        <div class="weather-forecast" id="weather-forecast">
+            <div class="weather-forecast-item">
+                <div class="day">Tue</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Wed</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Thur</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Fri</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+            <div class="weather-forecast-item">
+                <div class="day">Sat</div>
+                <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
+                <div class="temp">Night - 25.6&#176; C</div>
+                <div class="temp">Day - 35.6&#176; C</div>
+            </div>
+        </div>
+    </div>
+    <!-- weather html end here  -->
+    <!-- weather js  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+
     
     <!-- weather html  -->
     <footer>
@@ -167,5 +281,4 @@
 <script src="script.js"></script>
 </body>
 </html>
-
 

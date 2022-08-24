@@ -1,4 +1,4 @@
-html{
+           html{
     scroll-behavior: smooth;
 }
 /* search bar css  */
@@ -48,7 +48,6 @@ form{
       border-radius: 10px;
   }
   /* search bar css ends  */
-
     .popup {
       width: 800px;
       background: #ffffff;
@@ -57,7 +56,7 @@ form{
       text-align: center;
       padding: 0 30px 30px;
       color: #333;
-      visibility: hidden;
+      display: none;
     }
 
 
@@ -70,18 +69,19 @@ form{
       font-size: 18px;
       border-radius: 4px;
       cursor: pointer;
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    
     }
 
     .open-popup {
-      visibility: visible;
+      display: block;
+      padding: 20px;
       background: #ffffff;
       border-radius: 6px;
       width: 80%;
       z-index: 10;
-      margin-left: 150px;
-      margin-right: 150px;
-      margin-top: -348px;
+      margin-left: 10%;
+      margin-top: -450px;
+      
     }
 
     #col l3 m6 s12 {
@@ -218,9 +218,9 @@ form{
 
 .future-forecast{
     background:black;
-    padding: 0px;
-    padding-top: 10px;
-    bottom: 0;
+    padding: 25px;
+    padding-top: 5px;
+    position: absolute;
     display: flex;
     color:white;
     width: 100%;
@@ -334,7 +334,7 @@ form{
     .future-forecast{
         justify-content: start;
         align-items: none;
-        /* overflow-x: scroll; */
+        overflow-x: scroll;
     }
 }
 /* weather and date css end here  */
@@ -344,12 +344,14 @@ form{
     font-family: sans-serif;
 }
 footer{
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background: black;
     height: auto;
     width: 100vw;
+
     padding-top: 0px;
     color: #fff;
 }
@@ -441,7 +443,6 @@ display: block;
 .footer-menu ul li a{
   color: #cfd2d6;
   text-decoration: none;
-  margin-right: 10px;
 }
 .footer-menu ul li a:hover{
   color: #27bcda;
@@ -464,12 +465,13 @@ nav{	margin:0px;
 	padding:0px;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
-	width: 100%;
+	width: auto;
 	height: 65px;
 	
 	line-height: 75px;
 	padding:0px 10px;
-	
+    /* margin-left: -264px;
+	 */
 }
 
 nav ul{
@@ -483,7 +485,7 @@ nav ul li{
 	display: inline-block;
 	list-style: none;
     margin:0px;
-	padding:12px;
+	padding:7px;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 }
@@ -529,5 +531,6 @@ nav ul li .active{
     border-radius: 30px;
     
   }
-   /* scroll bar css ends  */          
+   /* scroll bar css ends  */ 
+           
 
