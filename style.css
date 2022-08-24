@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 /* search bar css  */
 form{
     background: #fff;
