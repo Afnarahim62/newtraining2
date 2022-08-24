@@ -1,5 +1,5 @@
 
-
+let newapi="pub_10316cb54031f0ba55b0468a1337c21dc0bbb";
 // weather and date js starts here 
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
@@ -79,71 +79,73 @@ function showWeatherData (data){
 
 
     //  js for navigation bar starts here
-     function myFunction1() {
+     function myFunction1(newapi) {
                 let name="business";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
 
 
         
-function myFunction9() {
+function myFunction9(newapi) {
                 let name="world";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction2() {
+function myFunction2(newapi) {
     let name="entertainment";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction3() {
+function myFunction3(newapi) {
     let name="health";
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction4() {
+function myFunction4(newapi) {
                 let name="politics"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction5() {
+function myFunction5(newapi) {
                 let name="science"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction6() {
+function myFunction6(newapi) {
                 let name="sports"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
           
           
 }
         
-function myFunction7() {
+function myFunction7(newapi) {
                 let name="technology"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
         
-function myFunction8() {
+function myFunction8(newapi) {
                 let name="top"
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&category="+name+"&language=en";
-          fetching(url1); 
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
 }
 
 // js for navigation ends here
 // news card fetching starts here
         let url1=" ";
-     fetching(url1); "+name+"
-        function fetching(url1){
+
+     fetching(url1,newapi); 
+        function fetching(url1,newapi){
                 if(url1==" "){
-                    url="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&language=en";
+                    url="https://newsdata.io/api/1/news?apikey="+newapi+"&language=en";
+
                 }else{
                     url=url1;
 
@@ -211,17 +213,89 @@ function newsfetching(latestNews){
           let query = $("#searchquery").val();
          
          
-          let url1="https://newsdata.io/api/1/news?apikey=pub_10487b1affaf56d8b793d3c9cf14addf974c4&q="+query+"&language=en";
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&q="+query+"&language=en";
          
           console.log(url1);
           if(query !== ""){
-            fetching(url1); 
-
+            fetching(url1,newapi); 
+          }
+              else{
+                  let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'>This news isn't available. Sorry about that.<br>Try searching for something else </div>`;
+                   $("#newsResults").html(noNews);
+                
+                }
 
   
-    }
+    
         });
 // js for search bar ends here
+
+// js for pagination
+const element = document.querySelector(".pagination ul");
+
+let totalPages = 864;
+let page = 1;
+
+//calling function with passing parameters and adding inside element which is ul tag
+element.innerHTML = createPagination(totalPages, page);
+function createPagination(totalPages, page){
+  let liTag = '';
+  let active;
+  let beforePage = page -1;
+  let afterPage = page + 1;
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+ 
+  if(page > 1){ //show the next button if the page value is greater than 1
+    liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${page - 1})"
+    ><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
+  }
+  
+  // how many pages or li show before the current li
+  if (page == totalPages) {
+    beforePage = beforePage - 2;
+  } else if (page == totalPages - 1) {
+    beforePage = beforePage - 1;
+  }
+  // how many pages or li show after the current li
+  if (page == 1) {
+    afterPage = afterPage + 2;
+  } else if (page == 2) {
+    afterPage  = afterPage + 1;
+  }
+
+  for (var plength = beforePage; plength <= afterPage; plength++) {
+    if (plength > totalPages) { //if plength is greater than totalPage length then continue
+      continue;
+    }
+    if (plength == 0) { //if plength is 0 than add +1 in plength value
+      plength = plength + 1;
+    }
+    if(page == plength){ //if page is equal to plength than assign active string in the active variable
+      active = "active";
+    }else{ //else leave empty to the active variable
+      active = "";
+    }
+    liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${plength})"><span>${plength}</span></li>`;
+  }
+
+
+
+  if (page < totalPages) { //show the next button if the page value is less than totalPage(20)
+    liTag += `<li class="btn next" onclick="createPagination(totalPages, ${page + 1})"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
+  }
+ 
+  pagiing(page);
+  function pagiing(page) {
+let url1="https://newsdata.io/api/1/news?apikey=pub_10316cb54031f0ba55b0468a1337c21dc0bbb&country=au,ca&page="+page+"";
+fetching(url1,newapi); 
+}
+
+  element.innerHTML = liTag; //add li tag inside ul tag
+  return liTag; //reurn the li tag
+}
+
+// js for pagination
 
 
        function openPopup(i) {
