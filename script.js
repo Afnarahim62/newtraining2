@@ -140,10 +140,12 @@ function myFunction8(newapi) {
 // js for navigation ends here
 // news card fetching starts here
         let url1=" ";
+
      fetching(url1,newapi); 
         function fetching(url1,newapi){
                 if(url1==" "){
                     url="https://newsdata.io/api/1/news?apikey="+newapi+"&language=en";
+
                 }else{
                     url=url1;
 
@@ -168,11 +170,11 @@ function newsfetching(latestNews){
              
           </div>
             <div class="card-content" style="width:70%; margin-left:50px">
-              <h3 style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;">${latestNews[i].title}</h3>
-            <p><i>${(latestNews[i].pubDate == null) ? ("--------") : (latestNews[i].pubDate)}</i></p>
+              <h3 style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;">${latestNews[i].title}</h3><br>
+            <p><i>${(latestNews[i].pubDate == null) ? ("--------") : (latestNews[i].pubDate)}</i></p><br>
             
-             <p>Creator: <i>${(latestNews[i].creator == null) ? ("--------") : (latestNews[i].creator)}</i></p>
-              <p><b>Description</b>: ${(latestNews[i].description == null) ? ("-------") : (latestNews[i].description)}</p>
+             <p>Creator: <i>${(latestNews[i].creator == null) ? ("--------") : (latestNews[i].creator)}</i></p><br>
+              <p><b>Description</b>: ${(latestNews[i].description == null) ? ("-------") : (latestNews[i].description)}</p><br>
             
               <button class="readmore-btn" id=pop-up${i} onclick="openPopup(${i})"  >Read More >></button>
                 </div>
@@ -180,7 +182,7 @@ function newsfetching(latestNews){
           </div>
           <div class="popup" id=popup${i}>
               <b><h style="font-family: Arial, Helvetica, sans-serif; font-size: 35px;">${latestNews[i].title}</h></b><br><br>
-              <img src="${(latestNews[i].image_url == null) ? ("noimage.jpg") : (latestNews[i].image_url)}" style="width:400px;height:auto;"/> <br>
+              <img src="${(latestNews[i].image_url == null) ? ("noimage.jpg") : (latestNews[i].image_url)}" style="width:400px;height:auto;"/> <br><br>
                 <p>${(latestNews[i].content == null) ? ("Not Content") : (latestNews[i].content)}</p><br>
                 <button class="close-btn" type="button" style="background-color: #FF0000;
   padding: 16px 20px;
@@ -300,6 +302,8 @@ fetching(url1,newapi);
       let popup = document.getElementById(`popup${i}`);
       popup.classList.add("open-popup");
       console.log(popup)
+
+      
     }
 
 
@@ -308,4 +312,10 @@ fetching(url1,newapi);
       popup.classList.remove("open-popup");
       console.log("close pop up")
     }
-
+    
+    $(document).mouseup(function(e){
+      var container = $(".open-popup");
+      if(!container.is(e.target) && container.has(e.target).length === 0){
+          $(".popup").removeClass("open-popup"); 
+      }
+  });
