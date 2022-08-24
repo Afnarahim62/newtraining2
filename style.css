@@ -1,8 +1,9 @@
-            /* css for pagination */
+           
+       html{
+    scroll-behavior: smooth;
+}
 
-
-/* search bar  */
-
+/ search bar css  /
 form{
     background: #fff;
       width: 0px;
@@ -18,7 +19,7 @@ form{
   #searchbtn{
     background: black;
       padding: 5px 18px;
-      border: none;
+     / border: none;
       outline: none;
       color: #fff;
       letter-spacing: 1px;
@@ -48,6 +49,9 @@ form{
       margin-left: -9px;
       border-radius: 10px;
   }
+  / search bar css ends  /
+
+
     .popup {
       width: 800px;
       background: #ffffff;
