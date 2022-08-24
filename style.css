@@ -8,7 +8,7 @@
       text-align: center;
       padding: 0 30px 30px;
       color: #333;
-      visibility: hidden;
+      display: none;
     }
 
 
@@ -21,18 +21,19 @@
       font-size: 18px;
       border-radius: 4px;
       cursor: pointer;
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    
     }
 
     .open-popup {
-      visibility: visible;
+      display: block;
+      padding: 20px;
       background: #ffffff;
       border-radius: 6px;
       width: 80%;
       z-index: 10;
-      margin-left: 150px;
-      margin-right: 150px;
-      margin-top: -348px;
+      margin-left: 10%;
+      margin-top: -450px;
+      
     }
 
     #col l3 m6 s12 {
@@ -171,8 +172,7 @@
     background:black;
     padding: 25px;
     padding-top: 5px;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
     display: flex;
     color:white;
     width: 100%;
@@ -462,4 +462,3 @@ nav ul li .active{
 }
 /* css for navigation bar finished */
            
-
