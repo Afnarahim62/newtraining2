@@ -1,513 +1,312 @@
-            /* css for pagination */
+
+let newapi="pub_10316cb54031f0ba55b0468a1337c21dc0bbb";
+// weather and date js starts here 
+const timeEl = document.getElementById('time');
+const dateEl = document.getElementById('date');
+const currentWeatherItemsEl = document.getElementById('current-weather-items');
+const weatherForecastEl = document.getElementById('weather-forecast');
+const currentTempEl = document.getElementById('current-temp');
 
 
-/* search bar  */
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-form{
-    background: #fff;
-      width: 0px;
-      height: 40px;
-      display: flex;
+const API_KEY ='49cc8c821cd2aff9af04c9f98c36eb74';
+
+setInterval(() => {
+    const time = new Date();
+    const month = time.getMonth();
+    const date = time.getDate();
+    const day = time.getDay();
+    const hour = time.getHours();
+    const hoursIn12HrFormat = hour >= 13 ? hour %12: hour
+    const minutes = time.getMinutes();
+    const ampm = hour >=12 ? 'PM' : 'AM'
+
+    timeEl.innerHTML = (hoursIn12HrFormat < 10? '0'+hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0'+minutes: minutes)+ ' ' + `<span id="am-pm">${ampm}</span>`
+
+    dateEl.innerHTML = days[day] + ', ' + date+ ' ' + months[month]
+
+}, 1000);
+
+getWeatherData()
+function getWeatherData () {
+    navigator.geolocation.getCurrentPosition((success) => {
+        
+        let {latitude, longitude } = success.coords;
+
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+
+        console.log(data)
+        showWeatherData(data);
+        })
+
+    })
+}
+
+function showWeatherData (data){
+    let {humidity, pressure, sunrise, sunset, wind_speed} = data.current;
+
+    let otherDayForcast = ''
+    data.daily.forEach((day, idx) => {
+        if(idx == 0){
+            currentTempEl.innerHTML = `
+            <img src="http://openweathermap.org/img/wn//${day.weather[0].icon}@4x.png" alt="weather icon" class="w-icon">
+            <div class="other">
+                <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
+                <div class="temp">Night - ${day.temp.night}&#176;C</div>
+                <div class="temp">Day - ${day.temp.day}&#176;C</div>
+            </div>
+            
+            `
+        }else{
+            otherDayForcast += `
+            <div class="weather-forecast-item">
+                <div class="day">${window.moment(day.dt*1000).format('ddd')}</div>
+               
+                <div class="temp">Night - ${day.temp.night}&#176;C</div>
+                <div class="temp">Day - ${day.temp.day}&#176;C</div>
+            </div>
+            
+            `
+        }
+    })
+
+
+    weatherForecastEl.innerHTML = otherDayForcast;
+}
+// weather and date js ends here 
+
+
+    //  js for navigation bar starts here
+     function myFunction1(newapi) {
+                let name="business";
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+}
+
+
+        
+function myFunction9(newapi) {
+                let name="world";
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+}
+        
+function myFunction2(newapi) {
+    let name="entertainment";
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+}
+        
+function myFunction3(newapi) {
+    let name="health";
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+}
+        
+function myFunction4(newapi) {
+                let name="politics"
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+}
+        
+function myFunction5(newapi) {
+                let name="science"
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+}
+        
+function myFunction6(newapi) {
+                let name="sports"
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+          
+          
+}
+        
+function myFunction7(newapi) {
+                let name="technology"
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+}
+        
+function myFunction8(newapi) {
+                let name="top"
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          fetching(url1,newapi); 
+}
+
+// js for navigation ends here
+// news card fetching starts here
+        let url1=" ";
+     fetching(url1,newapi); 
+        function fetching(url1,newapi){
+                if(url1==" "){
+                    url="https://newsdata.io/api/1/news?apikey="+newapi+"&language=en";
+                }else{
+                    url=url1;
+
+                }
+        
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        
+      let output = "";
+      let latestNews = data.results;
+      console.log(latestNews);
+      newsfetching(latestNews);
+function newsfetching(latestNews){
+      for (var i in latestNews) {
+        output += `
+          <div class="col l3 m6 s12">
+          <div class="cardmediumhoverable">
+        
+            <div class="card-image" >
+              <img src="${(latestNews[i].image_url == null) ? ("noimage.jpg") : (latestNews[i].image_url)}" style="width:400px;height:auto;"/> 
+             
+          </div>
+            <div class="card-content" style="width:70%; margin-left:50px">
+              <h3 style="font-family: Arial, Helvetica, sans-serif; font-size: 25px;">${latestNews[i].title}</h3>
+            <p><i>${(latestNews[i].pubDate == null) ? ("--------") : (latestNews[i].pubDate)}</i></p>
+            
+             <p>Creator: <i>${(latestNews[i].creator == null) ? ("--------") : (latestNews[i].creator)}</i></p>
+              <p><b>Description</b>: ${(latestNews[i].description == null) ? ("-------") : (latestNews[i].description)}</p>
+            
+              <button class="readmore-btn" id=pop-up${i} onclick="openPopup(${i})"  >Read More >></button>
+                </div>
+               </div>
+          </div>
+          <div class="popup" id=popup${i}>
+              <b><h style="font-family: Arial, Helvetica, sans-serif; font-size: 35px;">${latestNews[i].title}</h></b><br><br>
+              <img src="${(latestNews[i].image_url == null) ? ("noimage.jpg") : (latestNews[i].image_url)}" style="width:400px;height:auto;"/> <br>
+                <p>${(latestNews[i].content == null) ? ("Not Content") : (latestNews[i].content)}</p><br>
+                <button class="close-btn" type="button" style="background-color: #FF0000;
+  padding: 16px 20px;
+  cursor: pointer;
+  border-radius: 10px;" onclick="closePopup(${i})">Close</button>
+                </div>
+        `;
+      }
+      if(output !==""){
+        $("#newsResults").html(output);
+      }
+      }
+       
+       
+    }
+         
+      );
+      }
   
-  }
-  form input{
-    flex: 1;
+     
+        
+      //  news card fetching end here  
+      // js for search bar starts here
+    
+          $("#searchbtn").on("click",function(e){
+          e.preventDefault();
+          
+          let query = $("#searchquery").val();
+         
+         
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&q="+query+"&language=en";
+         
+          console.log(url1);
+          if(query !== ""){
+            fetching(url1,newapi); 
+          }
+              else{
+                  let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'>This news isn't available. Sorry about that.<br>Try searching for something else </div>`;
+                   $("#newsResults").html(noNews);
+                
+                }
+
   
-   }
-  
-  #searchbtn{
-    background: black;
-      padding: 5px 18px;
-      border: none;
-      outline: none;
-      color: #fff;
-      letter-spacing: 1px;
-      cursor: pointer;
-      font-size: x-large;
-      margin-right: 13px;
-      margin-left: 5px;
-      border-radius: 10px;
-  }
-  #searchquery{
-    padding: 10px;
-    font-size:x-large;
-    border-radius: 10px;
     
-  }
-  
-  #searchbtn1{
-    background: black;
-      padding: 5px 18px;
-      border: none;
-      outline: none;
-      color: #fff;
-      letter-spacing: 1px;
-      cursor: pointer;
-      font-size: x-large;
-      margin-right: 13px;
-      margin-left: -9px;
-      border-radius: 10px;
-  }
-    .popup {
-      width: 800px;
-      background: #ffffff;
-      border-radius: 6px;
-      position: absolute;
-      text-align: center;
-      padding: 0 30px 30px;
-      color: #333;
-      display: none;
-    }
+        });
+// js for search bar ends here
 
+// js for pagination
+const element = document.querySelector(".pagination ul");
 
-    .popup button {
-      width: 100%;
-      margin-top: 50px;
-      padding: 10px 0;
-      background: #00ff00;
-      color: #fff;
-      font-size: 18px;
-      border-radius: 4px;
-      cursor: pointer;
-    
-    }
+let totalPages = 864;
+let page = 1;
 
-    .open-popup {
-      display: block;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 6px;
-      width: 80%;
-      z-index: 10;
-      margin-left: 10%;
-      margin-top: -450px;
-      
-    }
-
-    #col l3 m6 s12 {
-      position: absolute;
-      width: 500px;
-      overflow: auto;
-      border: 2px solid black;
-      padding: 20px 20px;
-      margin: 20px;
-      height: 500px;
-    }
-
-    #newsResults {
-      box-sizing: border-box;
-      width: 100%;
-
-    }
-
-    .cardmediumhoverable {
-      background: #F2F2F7;
-      overflow: auto;
-      border-radius: 20px;
-      padding: 20px 20px;
-      margin: 20px;
-      height: auto;
-      display: flex;
-      opacity: 0.8;
-      margin-left: 5%;
-      margin-right: 5%;
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .readmore-btn {
-      background-color: #00FF00;
-      padding: 16px 20px;
-      cursor: pointer;
-      border-radius: 10px;
-      
-
-    }
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
-/* .top{
-    position:fixed;
-	z-index: 1;   
-} */
-*{
-    box-sizing: border-box;
-    margin:0;
-    padding:0;
-    font-family: 'Poppins', sans-serif;
-}
-.content1{
-    display: flex;
-    justify-content:space-between;
-   
-} 
-  /* header name css */
-  hr{
-    height: 6px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: black;
-  }
-.header{
-    font-family: 'Bebas Neue', cursive;
-    font-size: 88px;
-    margin-left: 10px;
-    margin-bottom: -10px;
-    
-}
-.ctwitemss{
-    display: flex;
-    align-items: center;
-    max-height: 100px;
-}
-.w-icon{
-    height: 115px;
-}
-/* weather and date css starts here  */
-.container{
-    padding: 20px 70px;
-    color:#fff;
-    background-color: black;
-    border-radius: 25px;
-    margin-right: 86px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.current-info{
-    display: flex;
-    float: right;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    color: black;
-}
-
-.date-container .time{
-    font-size: 20px;
-    color: white;
-    
-}
-
-.date-container #am-pm{
-    font-size: 20px;
-    margin-left: 10px;
-}
-
-.date-container .date{
-    font-size: 15px;
-    color: white;
-}
-
-.place-container{
-    text-align: end;
-}
-
-.place-container .time-zone{
-    font-size: 30px;
-    font-weight: 100;
-}
-
-.place-container .country{
-    font-size: 12px;
-    font-weight: 700;
-}
-.current-info .others .weather-item{
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.future-forecast{
-    background:black;
-    padding: 25px;
-    padding-top: 5px;
-    position: absolute;
-    display: flex;
-    color:white;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    overflow-y: hidden;
-}
-
-.future-forecast .today{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #eee; 
-    border-radius: 10px;
-    padding:0px;
-    padding-right: 0px;
-    border-radius: 0px;
-    background: rgba(0,0,0,0.2);
-}
-
-.future-forecast .today .day{
-    padding: 5px 15px;
-    background: #3c3c44;
-    border-radius: 50px;
-    text-align: center;
-}
-
-.future-forecast .today .temp{
-    font-size: 18px;
-    padding-top: 15px;
-}
-
-.future-forecast .weather-forecast{
-    display: flex;
-}
-
-.weather-forecast .weather-forecast-item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    border: 1px solid #eee;
-    padding: 5px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.2);
-    height: 115px;
-}
-
-.weather-forecast .weather-forecast-item .day{
-    padding: 5px 15px;
-    background: #3C3C44;
-    border-radius: 50px;
-    text-align: center;
-}
-
-.weather-forecast .weather-forecast-item .temp{
-    font-weight: 100;
-    font-size: 12px;
-}
-
-
-@media only screen and  (max-width:730px){
-    
-    .container{
-        padding: 20px;
-    }
-    
-    .future-forecast{
-        justify-content: start;
-        align-items: none;
-        overflow-y: scroll;
-    }
-
-    .future-forecast .today .temp{
-        font-size: 16px;
-    }
-
-    .date-container .time{
-        font-size: 50px;
-    }
-
-    .date-container #am-pm{
-        font-size: 20px;
-    }
-
-    .date-container .date{
-        font-size: 20px;
-    }
-
-    .place-container{
-        text-align: end;
-        margin-top: 15px;
-    }
-
-    .place-container .time-zone{
-        font-size: 20px;
-    }
-
-    .current-info .others{
-        padding: 12px;
-    }
-
-    .current-info .others .weather-item{
-        font-size: 14px;
-    }
-
-}
-
-@media only screen and (max-width: 1400px){
-    .future-forecast{
-        justify-content: start;
-        align-items: none;
-        overflow-x: scroll;
-    }
-}
-/* weather and date css end here  */
- /* footer css starts here*/
- .footerdown{
-    background: #fcfcfc;
-    font-family: sans-serif;
-}
-footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: black;
-    height: auto;
-    width: 100vw;
-
-    padding-top: 0px;
-    color: #fff;
-}
-.footer-content{
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-.footer-content h3{
-    font-size: 2.1rem;
-    font-weight: 500;
-    text-transform: capitalize;
-    line-height: 3rem;
-}
-.footer-content p{
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 28px;
-    font-size: 14px;
-    color: #cacdd2;
-}
-.socials{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-}
-.socials li{
-    margin: 0 10px;
-}
-.socials a{
-    text-decoration: none;
-    color: #fff;
-    border: 1.1px solid white;
-    padding: 5px;
-
-    border-radius: 50%;
-
-}
-.socials a i{
-    font-size: 1.1rem;
-    width: 20px;
-
-
-    transition: color .4s ease;
-
-}
-.socials a:hover i{
-    color: aqua;
-}
-
-.footer-bottom{
-    background: #000;
-    width: 100vw;
-    padding: 0px;
-padding-bottom: 0px;
-    text-align: center;
-}
-.footer-bottom p{
-    display: initial;
-    font-size: 14px;
-    word-spacing: 2px;
-    text-transform: capitalize;
-}
-.footer-bottom p a{
-  color:#44bae8;
-  font-size: 16px;
-  text-decoration: none;
-}
-.footer-bottom span{
-    text-transform: uppercase;
-    opacity: .4;
-    font-weight: 200;
-}
-.footer-menu{
-  float: right;
-
-}
-.footer-menu ul{
-  display: flex;
-}
-.footer-menu ul li{
-padding-right: 10px;
-display: block;
-}
-.footer-menu ul li a{
-  color: #cfd2d6;
-  text-decoration: none;
-}
-.footer-menu ul li a:hover{
-  color: #27bcda;
-}
-      
-@media (max-width:500px) {
-.footer-menu ul{
-  display: flex;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-}
-/* footer css ends here  */
-
+//calling function with passing parameters and adding inside element which is ul tag
+element.innerHTML = createPagination(totalPages, page);
+function createPagination(totalPages, page){
+  let liTag = '';
+  let active;
+  let beforePage = page -1;
+  let afterPage = page + 1;
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
  
+  if(page > 1){ //show the next button if the page value is greater than 1
+    liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${page - 1})"
+    ><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
+  }
+  
+  // how many pages or li show before the current li
+  if (page == totalPages) {
+    beforePage = beforePage - 2;
+  } else if (page == totalPages - 1) {
+    beforePage = beforePage - 1;
+  }
+  // how many pages or li show after the current li
+  if (page == 1) {
+    afterPage = afterPage + 2;
+  } else if (page == 2) {
+    afterPage  = afterPage + 1;
+  }
 
-          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
-/*  startncss for navigation bar */
-nav{	margin:0px;
-	padding:0px;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
-	width: auto;
-	height: 65px;
-	
-	line-height: 75px;
-	padding:0px 10px;
-    /* margin-left: -264px;
-	 */
+  for (var plength = beforePage; plength <= afterPage; plength++) {
+    if (plength > totalPages) { //if plength is greater than totalPage length then continue
+      continue;
+    }
+    if (plength == 0) { //if plength is 0 than add +1 in plength value
+      plength = plength + 1;
+    }
+    if(page == plength){ //if page is equal to plength than assign active string in the active variable
+      active = "active";
+    }else{ //else leave empty to the active variable
+      active = "";
+    }
+    liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${plength})"><span>${plength}</span></li>`;
+  }
+
+
+
+  if (page < totalPages) { //show the next button if the page value is less than totalPage(20)
+    liTag += `<li class="btn next" onclick="createPagination(totalPages, ${page + 1})"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
+  }
+ 
+  pagiing(page);
+  function pagiing(page) {
+let url1="https://newsdata.io/api/1/news?apikey=pub_10316cb54031f0ba55b0468a1337c21dc0bbb&country=au,ca&page="+page+"";
+fetching(url1,newapi); 
 }
 
-nav ul{
-	float: right;
-    margin:0px;
-	padding:0px 259px;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif; 
+  element.innerHTML = liTag; //add li tag inside ul tag
+  return liTag; //reurn the li tag
 }
-nav ul li{
-	display: inline-block;
-	list-style: none;
-    margin:0px;
-	padding:7px;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
-}
-nav ul li button{
-	color:rgb(77, 74, 74);
-	text-decoration: none;
-	font-size: 25px;
-	text-transform: uppercase;
-	padding:0px 22px;
-    display: contents;
-}
-   
-nav ul li button:hover{
-	color:#c0d96f;
-}
-nav ul li .active{
-	color:#c0d96f;
-}
-.image img{
-	width: 100%;
-	height: 0px auto;
-	opacity: 0.80;
-}
-/* css for navigation bar finished */
-           
+
+// js for pagination
+
+
+       function openPopup(i) {
+      let popup = document.getElementById(`popup${i}`);
+      popup.classList.add("open-popup");
+      console.log(popup)
+    }
+
+
+    function closePopup(i) {
+      let popup = document.getElementById(`popup${i}`);
+      popup.classList.remove("open-popup");
+      console.log("close pop up")
+    }
+
+
