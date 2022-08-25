@@ -73,7 +73,7 @@ border-radius: 50px;
 .pagination ul li:first-child:hover,
 .pagination ul li:last-child:hover{
 color: #fff;
-background: #20B2AA;
+background: black;
 }
 /* css for pagination */
     </style>
@@ -118,16 +118,17 @@ background: #20B2AA;
       
       <ul>
         
-              <li><button onclick="myFunction1(newapi)" >Home</button></li>
-        <li><button onclick="myFunction2(newapi)" >entertainment</button></li>
-              <li><button onclick="myFunction3(newapi)" >health</button></li>
-              <li><button onclick="myFunction4(newapi)" >politics</button></li>
-              <li><button onclick="myFunction5(newapi)" >science</button></li>
-              <li><button onclick="myFunction6(newapi)" >sports</button></li>
-              <li><button onclick="myFunction7(newapi)" >technology</button></li>
-              <li><button onclick="myFunction8(newapi)" >top</button></li>
-              <li><button onclick="myFunction9(newapi)" >world</button></li>
-  
+
+              <li><button onclick="myFunction2(newapi)" >Home</button></li>
+              <li><button id="entertainment" onclick="myFunction1(newapi,this)" >entertainment</button></li>
+              <li><button id="business" onclick="myFunction1(newapi,this)" >health</button></li>
+              <li><button id="politics" onclick="myFunction1(newapi,this)" >politics</button></li>
+              <li><button id="science" onclick="myFunction1(newapi,this)" >science</button></li>
+              <li><button id="sports" onclick="myFunction1(newapi,this)" >sports</button></li>
+              <li><button id="technology" onclick="myFunction1(newapi,this)" >technology</button></li>
+              <li><button id="top" onclick="myFunction1(newapi,this)" >top</button></li>
+              <li><button id="world" onclick="myFunction1(newapi,this)" >world</button></li>
+
               
       </ul>
     </nav>
@@ -201,9 +202,13 @@ background: #20B2AA;
   </div>
 <!-- body for news card ends here --> 
  <!-- body of pagination starts -->
+ <br>
+ <br>
  <div class="pagination">
     <ul> <!--pages or li are comes from javascript --> </ul>
   </div>
+  <br>
+  <br>
   <!-- body of pagination ends here -->
    
     <!-- weather js  -->
