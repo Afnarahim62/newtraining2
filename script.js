@@ -349,3 +349,23 @@ createPagination( totalPages,page);
           $(".popup").removeClass("open-popup"); 
       }
   });
+//  weatherpop 
+
+function wpopup() {
+  let popup = document.getElementById(`weatherpop`);
+  popup.classList.add("openweatherpop");
+  console.log(popup)
+
+  
+}
+function closeweatherpopup() {
+  let popup = document.getElementById(`weatherpop`);
+  popup.classList.remove("openweatherpop");
+  console.log("close pop up")
+}
+$(document).mouseup(function(e){
+  var container = $(".weatherpop");
+  if(!container.is(e.target) && container.has(e.target).length === 0){
+      $(".weatherpop").removeClass("openweatherpop"); 
+  }
+});
