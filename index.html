@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <style>
 
 .pagination {
@@ -72,7 +73,7 @@ border-radius: 50px;
 .pagination ul li:first-child:hover,
 .pagination ul li:last-child:hover{
 color: #fff;
-background: #20B2AA;
+background: black;
 }
 /* css for pagination */
     </style>
@@ -110,6 +111,7 @@ background: #20B2AA;
 </div>
 </header>
 <hr>
+<hr>
  <!-- body for navigation -->
       
  <div>
@@ -117,16 +119,17 @@ background: #20B2AA;
       
       <ul>
         
-              <li><button onclick="myFunction1(newapi)" >business</button></li>
-        <li><button onclick="myFunction2(newapi)" >entertainment</button></li>
-              <li><button onclick="myFunction3(newapi)" >health</button></li>
-              <li><button onclick="myFunction4(newapi)" >politics</button></li>
-              <li><button onclick="myFunction5(newapi)" >science</button></li>
-              <li><button onclick="myFunction6(newapi)" >sports</button></li>
-              <li><button onclick="myFunction7(newapi)" >technology</button></li>
-              <li><button onclick="myFunction8(newapi)" >top</button></li>
-              <li><button onclick="myFunction9(newapi)" >world</button></li>
-  
+              <li><button onclick="myFunction2(newapi)" >Home</button></li>
+              <li><button id="world" onclick="myFunction1(newapi,this)" >World</button></li>
+              <li><button id="top" onclick="myFunction1(newapi,this)" >Top</button></li>
+              <li><button id="entertainment" onclick="myFunction1(newapi,this)" >Entertainment</button></li>
+              <li><button id="business" onclick="myFunction1(newapi,this)" >Health</button></li>
+              <li><button id="politics" onclick="myFunction1(newapi,this)" >Politics</button></li>
+              <li><button id="science" onclick="myFunction1(newapi,this)" >Science</button></li>
+              <li><button id="sports" onclick="myFunction1(newapi,this)" >Sports</button></li>
+              <li><button id="technology" onclick="myFunction1(newapi,this)" >Technology</button></li>
+              
+              
               
       </ul>
     </nav>
@@ -200,29 +203,43 @@ background: #20B2AA;
   </div>
 <!-- body for news card ends here --> 
  <!-- body of pagination starts -->
+ <br>
+ <br>
  <div class="pagination">
     <ul> <!--pages or li are comes from javascript --> </ul>
   </div>
+  <br>
+  <br>
   <!-- body of pagination ends here -->
    
     <!-- weather js  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
     
     <!-- weather js end here  -->
-    <!-- footer html  -->
-<div class="footerdown">
+    <!-- scroll up button html  -->
+    <div class="upbar">
+        <a class="gotopbtn" href="#"> <i class="fas fa-arrow-up"></i> </a>
+    </div>
+    <!-- scroll up button html ends  -->
+ <!-- footer html  -->
+ <div class="footerdown">
     <footer>
         <div class="footer-bottom">
-            <p>copyright &copy;2022 <a href="https://www.terrificminds.com/">Terrific Minds</a>  </p>
+            <div class="footer-content">
+            <h3>News Letter</h3>
+            <p>News Letter is a site devoted to delivering the news in a different format than television, print or radio. News Letter include sites that have a large variety of information which may not be considered "news" by all audiences, but may include entertainment, games, news that is current and interesting, or other miscellaneous information.</p>
+            </div>
+            <p>copyright &copy;2022 <a href="https://www.terrificminds.com/">Terrific Minds</a> </p>
                     <div class="footer-menu">
                       <ul class="f-menu">
-                        <li><a href="mailto:rahees@terrificminds.com">Contact Us</a></li>
+                        <li><a href="mailto:rahees@terrificminds.com">Email Us</a></li>
                       </ul>
                     </div>
         </div>
+
     </footer>
 </div>
-</div>
+<!-- footer html ends here  -->
 <!-- footer html ends here  -->
 <script src="script.js"></script>
 </body>
