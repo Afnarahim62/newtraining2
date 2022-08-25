@@ -99,7 +99,7 @@ background: #20B2AA;
             </div>
         </div>  
     </div>
-    <div class="ctwitemss" id="current-temp" onclick="wpopup()" >
+    <div class="ctwitemss" id="current-temp">
         <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
         <div class="other">
             <div class="day">Monday</div>
@@ -117,8 +117,7 @@ background: #20B2AA;
       
       <ul>
         
-
-              <li><button onclick="myFunction2(newapi)" >Home</button></li>
+              <li><button id="business" onclick="myFunction1(newapi,this)" >business</button></li>
         <li><button id="entertainment" onclick="myFunction1(newapi,this)" >entertainment</button></li>
               <li><button id="business" onclick="myFunction1(newapi,this)" >health</button></li>
               <li><button id="politics" onclick="myFunction1(newapi,this)" >politics</button></li>
@@ -127,7 +126,6 @@ background: #20B2AA;
               <li><button id="technology" onclick="myFunction1(newapi,this)" >technology</button></li>
               <li><button id="top" onclick="myFunction1(newapi,this)" >top</button></li>
               <li><button id="world" onclick="myFunction1(newapi,this)" >world</button></li>
-
   
               
       </ul>
@@ -146,45 +144,7 @@ background: #20B2AA;
   </div>
 
 <!-- body for search bar ends here -->
-<div class="weatherpop" id="weatherpop">
-    <div class="future-forecast">   
-       <div class="weather-forecast" id="weather-forecast">
-           <div class="weather-forecast-item">
-               <div class="day">Tue</div>
-               <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
-               <div class="temp">Night - 25.6&#176; C</div>
-               <div class="temp">Day - 35.6&#176; C</div>
-           </div>
-           <div class="weather-forecast-item">
-               <div class="day">Wed</div>
-               <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
-               <div class="temp">Night - 25.6&#176; C</div>
-               <div class="temp">Day - 35.6&#176; C</div>
-           </div>
-           <div class="weather-forecast-item">
-               <div class="day">Thur</div>
-               <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
-               <div class="temp">Night - 25.6&#176; C</div>
-               <div class="temp">Day - 35.6&#176; C</div>
-           </div>
-           <div class="weather-forecast-item">
-               <div class="day">Fri</div>
-               <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
-               <div class="temp">Night - 25.6&#176; C</div>
-               <div class="temp">Day - 35.6&#176; C</div>
-           </div>
-           <div class="weather-forecast-item">
-               <div class="day">Sat</div>
-               <!-- <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon"> -->
-               <div class="temp">Night - 25.6&#176; C</div>
-               <div class="temp">Day - 35.6&#176; C</div>
-           </div>
 
-       </div>
-         <br>
-         <!-- <button class="button3" type="button" onclick="closeweatherpopup()">Close</button> -->
-   </div>       
- </div>
 <!-- body for news card starts here -->
 
   <div class="container1">
@@ -211,7 +171,10 @@ background: #20B2AA;
   <br>
   <br>
   <!-- body of pagination ends here -->
-
+  
+    <!-- weather html  -->
+    
+    <!-- weather html end here  -->
     <!-- weather js  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
     
