@@ -1,5 +1,7 @@
            
-/* search bar css  */
+
+
+
 form{
     background: #fff;
       width: 0px;
@@ -45,10 +47,6 @@ form{
       margin-left: -9px;
       border-radius: 10px;
   }
-  .input-field{
-    margin: auto;
-    width: 20%;
-  }
 /*    search bar css ends  */
 
 
@@ -83,7 +81,7 @@ form{
       border-radius: 6px;
       width: 80%;
       z-index: 10;
-      /* margin-left: 10%; */
+      margin-left: 10%;
       margin-top: -450px;
       
     }
@@ -230,12 +228,7 @@ form{
     width: 100%;
     align-items: center;
     justify-content: center;
-    overflow-y: hidden;
-    margin-top: -120px;
-    border-radius: 20px;
-
 }
-
 
 .future-forecast .today{
     display: flex;
@@ -352,7 +345,7 @@ form{
     font-family: sans-serif;
 }
 footer{
-
+    
     bottom: 0;
     left: 0;
     right: 0;
@@ -518,69 +511,4 @@ nav ul li .active{
 	opacity: 0.80;
 }
 /* css for navigation bar finished */
-     
-
-
-
-
-.future-forecast{
-    background:black;
-    padding: 25px;
-    position: absolute;
-    display: flex;
-    color:white;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    /* overflow-y: hidden; */
-    z-index: 1000;
-    margin-left: -30px;
-}
-
-
-.future-forecast .weather-forecast{
-    display: flex;
-}
-
-.weather-forecast .weather-forecast-item{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 10px;
-    border: 1px solid #eee;
-    padding: 5px;
-    border-radius: 10px;
-    background: rgba(0,0,0,0.2);
-    height: 115px;
-}
-
-.weather-forecast .weather-forecast-item .day{
-    padding: 5px 15px;
-    background: #3C3C44;
-    border-radius: 50px;
-    text-align: center;
-}
-
-  .weatherpop {
-      width: auto;
-      background: #ffffff;
-      border-radius: 6px;
-      text-align: center;
-      padding: 0 30px 30px;
-      color: #333;
-      display: none;
-}
-    
-.openweatherpop {
-      width: auto;
-      background: #ffffff;
-      border-radius: 6px;
-      text-align: center;
-      padding: 0 30px 30px;
-      color: #333;
-      display: block;
-      z-index: 1000;    
-      margin: top 0px;;
-    
-  }
+           
