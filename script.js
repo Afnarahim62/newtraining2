@@ -37,7 +37,7 @@ function getWeatherData () {
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
-
+    
         showWeatherData(data);
         })
 
@@ -114,7 +114,7 @@ function myFunction1(newapi,a) {
         
       let output = "";
       let latestNews = data.results;
-
+     
       newsfetching(latestNews);
 function newsfetching(latestNews){
       for (var i in latestNews) {
@@ -257,7 +257,6 @@ element.innerHTML = liTag; //add li tag inside ul tag
 }
 
 let totalPages=fetch("https://newsdata.io/api/1/news?apikey=pub_106034d55252e54cc00f4b6ad3ff0c71c3a41&language=en")
-
 .then(response => response.json())
 .then(data => {
 let totalpage= data.totalResults;
@@ -290,7 +289,7 @@ createPagination( totalPages,page);
     function closePopup(i) {
       let popup = document.getElementById(`popup${i}`);
       popup.classList.remove("open-popup");
-
+      
     }
     
     $(document).mouseup(function(e){
@@ -304,14 +303,14 @@ createPagination( totalPages,page);
 function wpopup() {
   let popup = document.getElementById(`weatherpop`);
   popup.classList.add("openweatherpop");
-
+ 
 
   
 }
 function closeweatherpopup() {
   let popup = document.getElementById(`weatherpop`);
   popup.classList.remove("openweatherpop");
-
+ 
 }
 $(document).mouseup(function(e){
   var container = $(".weatherpop");
