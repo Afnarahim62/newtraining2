@@ -79,7 +79,15 @@ function showWeatherData (data){
 
 
     //  js for navigation bar starts here
-     function myFunction1(newapi) {
+
+     function myFunction1(newapi,a) {
+      //console.log(getElementById(this))
+      let name = a.id;
+      console.log(name);
+          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
+          }
+
+     function myFunction2(newapi) {
                 // let name="business";
           let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&language=en";
           fetching(url1,newapi); 
@@ -87,55 +95,6 @@ function showWeatherData (data){
 
 
         
-function myFunction9(newapi) {
-                let name="world";
-          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
-          fetching(url1,newapi); 
-}
-        
-function myFunction2(newapi) {
-    let name="entertainment";
-          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
-          fetching(url1,newapi); 
-}
-        
-function myFunction3(newapi) {
-    let name="health";
-          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
-          fetching(url1,newapi); 
-}
-        
-function myFunction4(newapi) {
-                let name="politics"
-          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
-          fetching(url1,newapi); 
-}
-        
-function myFunction5(newapi) {
-                let name="science"
-          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
-          fetching(url1,newapi); 
-}
-        
-function myFunction6(newapi) {
-                let name="sports"
-          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
-          fetching(url1,newapi); 
-          
-          
-}
-        
-function myFunction7(newapi) {
-                let name="technology"
-          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
-          fetching(url1,newapi); 
-}
-        
-function myFunction8(newapi) {
-                let name="top"
-          let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
-          fetching(url1,newapi); 
-}
 
 // js for navigation ends here
 // news card fetching starts here
@@ -229,6 +188,7 @@ function newsfetching(latestNews){
     
         });
 // js for search bar ends here
+
 
 // js for pagination
 const element = document.querySelector(".pagination ul");
@@ -328,6 +288,7 @@ createPagination( totalPages,page);
 
 // js for pagination
 
+
        function openPopup(i) {
       let popup = document.getElementById(`popup${i}`);
       popup.classList.add("open-popup");
@@ -349,6 +310,7 @@ createPagination( totalPages,page);
           $(".popup").removeClass("open-popup"); 
       }
   });
+
 //  weatherpop 
 
 function wpopup() {
@@ -369,3 +331,4 @@ $(document).mouseup(function(e){
       $(".weatherpop").removeClass("openweatherpop"); 
   }
 });
+
