@@ -1,4 +1,7 @@
-           
+html{
+    scroll-behavior: smooth;
+}
+  
 /* search bar css  */
 form{
     background: #fff;
@@ -64,7 +67,7 @@ form{
     }
 
 
-    .popup button {
+    /* .popup button {
       width: 100%;
       margin-top: 50px;
       padding: 10px 0;
@@ -74,17 +77,18 @@ form{
       border-radius: 4px;
       cursor: pointer;
     
-    }
+    } */
 
     .open-popup {
       display: block;
       padding: 20px;
-      background: #ffffff;
+      background: #F2F2F7;
       border-radius: 6px;
       width: 80%;
       z-index: 10;
-      /* margin-left: 10%; */
-      margin-top: -450px;
+      margin-left: 10%;
+      margin-top: -400px;
+      box-shadow: 0 5px 5px rgb(0 0 0 / 20%);
       
     }
 
@@ -119,13 +123,45 @@ form{
     }
 
     .readmore-btn {
-      background-color: #00FF00;
+      /* background-color: #a5afa5;
       padding: 16px 20px;
       cursor: pointer;
-      border-radius: 10px;
+      border-radius: 10px; */
       
 
+      background: black;
+      padding: 5px 18px;
+      border: none;
+      outline: none;
+      color: #fff;
+      letter-spacing: 1px;
+      cursor: pointer;
+      font-size: x-large;
+      margin-right: 13px;
+      margin-left: 5px;
+      border-radius: 10px;
+
     }
+
+    .close-btn {
+        /* background-color: #a5afa5;
+        padding: 16px 20px;
+        cursor: pointer;
+        border-radius: 10px; */
+        
+        border: none;
+        outline: none;
+        color: #fff;
+        letter-spacing: 1px;
+        cursor: pointer;
+        font-size: x-large;
+        margin-right: 13px;
+        margin-left: 5px;
+        border-radius: 10px;
+  
+      }
+
+    
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
@@ -146,7 +182,7 @@ form{
 } 
   /* header name css */
   hr{
-    height: 6px;
+    height: 3px;
     margin-left: auto;
     margin-right: auto;
     background-color: black;
@@ -156,12 +192,14 @@ form{
     font-size: 88px;
     margin-left: 10px;
     margin-bottom: -10px;
+    margin-left: 790px;
     
 }
 .ctwitemss{
     display: flex;
     align-items: center;
     max-height: 100px;
+    margin-right: 70px;
 }
 .w-icon{
     height: 115px;
@@ -170,11 +208,12 @@ form{
 .container{
     padding: 20px 70px;
     color:#fff;
-    background-color: black;
+    /* background-color: black; */
     border-radius: 25px;
     margin-right: 86px;
     margin-top: 5px;
     margin-bottom: 5px;
+    position: absolute;
 }
 
 .current-info{
@@ -186,8 +225,8 @@ form{
 }
 
 .date-container .time{
-    font-size: 20px;
-    color: white;
+    font-size: 30px;
+    color: black;
     
 }
 
@@ -197,8 +236,8 @@ form{
 }
 
 .date-container .date{
-    font-size: 15px;
-    color: white;
+    font-size: 12px;
+    color: black;
 }
 
 .place-container{
@@ -345,28 +384,18 @@ form{
     }
 }
 /* weather and date css end here  */
- /* footer css starts here*/
- .footerdown{
+/* footer css starts here*/
+.footerdown{
     background: #fcfcfc;
     font-family: sans-serif;
 }
 footer{
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: black;
-    height: auto;
-    width: 100vw;
-
-    padding-top: 0px;
+  
     color: #fff;
 }
 .footer-content{
-    /* display: flex; */
-    align-items: center;
-    justify-content: center;
+    display: flex;
     flex-direction: column;
-    text-align: center;
 }
 .footer-content h3{
     font-size: 2.1rem;
@@ -375,52 +404,21 @@ footer{
     line-height: 3rem;
 }
 .footer-content p{
-    max-width: 500px;
+    max-width: 900px;
     margin: 10px auto;
     line-height: 28px;
     font-size: 14px;
-    color: #cacdd2;
-}
-.socials{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-}
-.socials li{
-    margin: 0 10px;
-}
-.socials a{
-    text-decoration: none;
-    color: #fff;
-    border: 1.1px solid white;
-    padding: 5px;
-
-    border-radius: 50%;
-
-}
-.socials a i{
-    font-size: 1.1rem;
-    width: 20px;
-
-
-    transition: color .4s ease;
-
-}
-.socials a:hover i{
-    color: aqua;
+    color: white;
 }
 
 .footer-bottom{
-    background: #000;
-    width: 100vw;
-    padding: 0px;
-padding-bottom: 0px;
+    background:black;
+    padding: 5px;
+    padding-bottom: 22px;
     text-align: center;
 }
 .footer-bottom p{
-    display: initial;
+float: left;
     font-size: 14px;
     word-spacing: 2px;
     text-transform: capitalize;
@@ -447,13 +445,13 @@ padding-right: 10px;
 display: block;
 }
 .footer-menu ul li a{
-  color: #cfd2d6;
+  color:white;
   text-decoration: none;
 }
 .footer-menu ul li a:hover{
   color: #27bcda;
 }
-      
+
 @media (max-width:500px) {
 .footer-menu ul{
   display: flex;
@@ -462,6 +460,7 @@ display: block;
 }
 }
 /* footer css ends here  */
+
 
  
 
@@ -486,6 +485,8 @@ nav ul{
 	padding:0px 259px;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif; 
+    margin-top: -15px;
+    margin-right: 168px;
 }
 nav ul li{
 	display: inline-block;
@@ -494,12 +495,13 @@ nav ul li{
 	padding:7px;
 	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
+    
 }
 nav ul li button{
 	color:rgb(77, 74, 74);
 	text-decoration: none;
 	font-size: 25px;
-	text-transform: uppercase;
+	
 	padding:0px 22px;
     display: contents;
 }
@@ -580,5 +582,28 @@ nav ul li .active{
       display: block;
       z-index: 1000;    
       margin: top 0px;;
+    
+  }
+
+
+  /* scroll up button css  */
+  .upbar{
+
+    margin: 0;
+    padding: 0;
+  }
+  .gotopbtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background:black;
+    bottom: 40px;
+    right: 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
     
   }
