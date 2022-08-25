@@ -1,5 +1,5 @@
 
-let newapi="pub_10316cb54031f0ba55b0468a1337c21dc0bbb";
+let newapi="pub_10487b1affaf56d8b793d3c9cf14addf974c4";
 // weather and date js starts here 
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
@@ -194,6 +194,11 @@ function newsfetching(latestNews){
       if(output !==""){
         $("#newsResults").html(output);
       }
+      else{
+        let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'>This news isn't available. Sorry about that.<br>Try searching for something else </div>`;
+         $("#newsResults").html(noNews);
+      
+      }
       }
        
        
@@ -220,7 +225,7 @@ function newsfetching(latestNews){
             fetching(url1,newapi); 
           }
               else{
-                  let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'>This news isn't available. Sorry about that.<br>Try searching for something else </div>`;
+                  let noNews = `<div style='text-align:center; font-size:36px; margin-top:40px;'>Search bar is Empty!!!! Try for something else </div>`;
                    $("#newsResults").html(noNews);
                 
                 }
@@ -319,3 +324,30 @@ fetching(url1,newapi);
           $(".popup").removeClass("open-popup"); 
       }
   });
+ function wpopup(){
+  console.log("working")
+ }
+
+
+
+
+//  weatherpop 
+
+function wpopup() {
+  let popup = document.getElementById(`weatherpop`);
+  popup.classList.add("openweatherpop");
+  console.log(popup)
+
+  
+}
+function closeweatherpopup() {
+  let popup = document.getElementById(`weatherpop`);
+  popup.classList.remove("openweatherpop");
+  console.log("close pop up")
+}
+$(document).mouseup(function(e){
+  var container = $(".weatherpop");
+  if(!container.is(e.target) && container.has(e.target).length === 0){
+      $(".weatherpop").removeClass("openweatherpop"); 
+  }
+});
