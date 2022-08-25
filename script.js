@@ -1,5 +1,5 @@
 
-let newapi="pub_10414fe471c24b4668c23d19b8d3725ff53c0";
+let newapi="pub_106034d55252e54cc00f4b6ad3ff0c71c3a41";
 // weather and date js starts here 
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
@@ -37,7 +37,7 @@ function getWeatherData () {
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
-        console.log(data)
+    
         showWeatherData(data);
         })
 
@@ -77,9 +77,9 @@ function showWeatherData (data){
 }
 // weather and date js ends here 
 function myFunction1(newapi,a) {
-  //console.log(getElementById(this))
+
   let name = a.id;
-  console.log(name);
+
       let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
       fetching(url1,newapi); 
 }
@@ -114,7 +114,7 @@ function myFunction1(newapi,a) {
         
       let output = "";
       let latestNews = data.results;
-      console.log(latestNews);
+     
       newsfetching(latestNews);
 function newsfetching(latestNews){
       for (var i in latestNews) {
@@ -142,7 +142,7 @@ function newsfetching(latestNews){
               <h style="font-family: Arial, Helvetica, sans-serif; font-size: 35px;">${latestNews[i].title}</h><br><br>
               <img src="${(latestNews[i].image_url == null) ? (" ") : (latestNews[i].image_url)}" style="width:400px;height:auto;"/> <br><br>
                 <p>${(latestNews[i].content == null) ? ("Not Content") : (latestNews[i].content)}</p><br>
-                <button class="close-btn" type="button" style="background-color: black;
+                <button class="close-btn" type="button" style="background-color: red;
                 padding: 5px 10px;
   cursor: pointer;
   border-radius: 10px;" onclick="closePopup(${i})"><b>Close</b></button>
@@ -178,7 +178,7 @@ function newsfetching(latestNews){
          
           let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&q="+query+"&language=en";
          
-          console.log(url1);
+          
           if(query !== ""){
             fetching(url1,newapi); 
           }
@@ -246,9 +246,8 @@ liTag += `<li class="btn next" onclick="createPagination(${totalPages}, ${page +
 
 pagiing(page,newapi);
 function pagiing(page,newapi) {
-console.log("page", page);
-console.log("newapi", newapi);
-let url1="https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&page="+page+"&language=en";
+
+let url1="https://newsdata.io/api/1/news?apikey=pub_106034d55252e54cc00f4b6ad3ff0c71c3a41&page="+page+"&language=en";
 
 fetching(url1,newapi); 
 }
@@ -257,7 +256,7 @@ element.innerHTML = liTag; //add li tag inside ul tag
 
 }
 
-let totalPages=fetch("https://newsdata.io/api/1/news?apikey=pub_10414fe471c24b4668c23d19b8d3725ff53c0&language=en")
+let totalPages=fetch("https://newsdata.io/api/1/news?apikey=pub_106034d55252e54cc00f4b6ad3ff0c71c3a41&language=en")
 .then(response => response.json())
 .then(data => {
 let totalpage= data.totalResults;
@@ -270,18 +269,18 @@ return th;
 
 ).then(totalPages=>{
 
-// // change
+
 createPagination( totalPages,page);
 })
 
-// change
+
 // js for pagination
 
 
        function openPopup(i) {
       let popup = document.getElementById(`popup${i}`);
       popup.classList.add("open-popup");
-      console.log(popup)
+     
 
       
     }
@@ -290,7 +289,7 @@ createPagination( totalPages,page);
     function closePopup(i) {
       let popup = document.getElementById(`popup${i}`);
       popup.classList.remove("open-popup");
-      console.log("close pop up")
+      
     }
     
     $(document).mouseup(function(e){
@@ -304,14 +303,14 @@ createPagination( totalPages,page);
 function wpopup() {
   let popup = document.getElementById(`weatherpop`);
   popup.classList.add("openweatherpop");
-  console.log(popup)
+ 
 
   
 }
 function closeweatherpopup() {
   let popup = document.getElementById(`weatherpop`);
   popup.classList.remove("openweatherpop");
-  console.log("close pop up")
+ 
 }
 $(document).mouseup(function(e){
   var container = $(".weatherpop");

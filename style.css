@@ -89,6 +89,7 @@ form{
       margin-left: 10%;
       margin-top: -400px;
       box-shadow: 0 5px 5px rgb(0 0 0 / 20%);
+      border:solid;
       
     }
 
@@ -123,10 +124,7 @@ form{
     }
 
     .readmore-btn {
-      /* background-color: #a5afa5;
-      padding: 16px 20px;
-      cursor: pointer;
-      border-radius: 10px; */
+   
       
 
       background: black;
@@ -136,7 +134,7 @@ form{
       color: #fff;
       letter-spacing: 1px;
       cursor: pointer;
-      font-size: x-large;
+      font-size:15px;
       margin-right: 13px;
       margin-left: 5px;
       border-radius: 10px;
@@ -144,20 +142,17 @@ form{
     }
 
     .close-btn {
-        /* background-color: #a5afa5;
-        padding: 16px 20px;
-        cursor: pointer;
-        border-radius: 10px; */
+        
         
         border: none;
         outline: none;
         color: #fff;
         letter-spacing: 1px;
         cursor: pointer;
-        font-size: x-large;
+        font-size: 15px;
         margin-right: 13px;
         margin-left: 5px;
-        border-radius: 10px;
+        border-radius: 6px;
   
       }
 
