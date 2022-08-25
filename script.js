@@ -1,5 +1,5 @@
 
-let newapi="pub_106058f3f6fde7e0e0961bd264c60474f05fb";
+let newapi="pub_106128d2584ec01ce509dbb95bd9eab767381";
 // weather and date js starts here 
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
@@ -247,7 +247,7 @@ liTag += `<li class="btn next" onclick="createPagination(${totalPages}, ${page +
 pagiing(page,newapi);
 function pagiing(page,newapi) {
 
-let url1="https://newsdata.io/api/1/news?apikey=pub_106058f3f6fde7e0e0961bd264c60474f05fb&page="+page+"&language=en";
+let url1="https://newsdata.io/api/1/news?apikey=pub_106128d2584ec01ce509dbb95bd9eab767381&page="+page+"&language=en";
 
 fetching(url1,newapi); 
 }
@@ -256,7 +256,7 @@ element.innerHTML = liTag; //add li tag inside ul tag
 
 }
 
-let totalPages=fetch("https://newsdata.io/api/1/news?apikey=pub_106058f3f6fde7e0e0961bd264c60474f05fb&language=en")
+let totalPages=fetch("https://newsdata.io/api/1/news?apikey=pub_106128d2584ec01ce509dbb95bd9eab767381&language=en")
 .then(response => response.json())
 .then(data => {
 let totalpage= data.totalResults;
