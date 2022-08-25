@@ -134,7 +134,7 @@ function newsfetching(latestNews){
               <p><b>Description</b>: ${(latestNews[i].description == null) ? ("-------") : (latestNews[i].description)}</p><br>
             
               
-              <button class="readmore-btn" id=pop-up${i} onclick="openPopup(${i})" style="display:${(latestNews[i].content == null) ? ("none") : ("block")}"><b>Read More</button>
+              <button class="readmore-btn" id=pop-up${i} onclick="openPopup(${i})" style="display:${(latestNews[i].content == null) ? ("none") : ("block")}">Read More</button>
                 </div>
                </div>
           </div>
