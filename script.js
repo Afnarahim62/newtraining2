@@ -37,7 +37,7 @@ function getWeatherData () {
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
-      
+
         showWeatherData(data);
         })
 
@@ -79,7 +79,7 @@ function showWeatherData (data){
 function myFunction1(newapi,a) {
 
   let name = a.id;
-  
+
       let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
       fetching(url1,newapi); 
 }
@@ -114,7 +114,7 @@ function myFunction1(newapi,a) {
         
       let output = "";
       let latestNews = data.results;
-      
+
       newsfetching(latestNews);
 function newsfetching(latestNews){
       for (var i in latestNews) {
@@ -142,7 +142,7 @@ function newsfetching(latestNews){
               <h style="font-family: Arial, Helvetica, sans-serif; font-size: 35px;">${latestNews[i].title}</h><br><br>
               <img src="${(latestNews[i].image_url == null) ? (" ") : (latestNews[i].image_url)}" style="width:400px;height:auto;"/> <br><br>
                 <p>${(latestNews[i].content == null) ? ("Not Content") : (latestNews[i].content)}</p><br>
-                <button class="close-btn" type="button" style="background-color: black;
+                <button class="close-btn" type="button" style="background-color: red;
                 padding: 5px 10px;
   cursor: pointer;
   border-radius: 10px;" onclick="closePopup(${i})"><b>Close</b></button>
@@ -246,6 +246,7 @@ liTag += `<li class="btn next" onclick="createPagination(${totalPages}, ${page +
 
 pagiing(page,newapi);
 function pagiing(page,newapi) {
+
 let url1="https://newsdata.io/api/1/news?apikey=pub_106034d55252e54cc00f4b6ad3ff0c71c3a41&page="+page+"&language=en";
 
 fetching(url1,newapi); 
@@ -255,7 +256,8 @@ element.innerHTML = liTag; //add li tag inside ul tag
 
 }
 
-let totalPages=fetch("https://newsdata.io/api/1/news?apikey=pub_106034d55252e54cc00f4b6ad3ff0c71c3a410&language=en")
+let totalPages=fetch("https://newsdata.io/api/1/news?apikey=pub_106034d55252e54cc00f4b6ad3ff0c71c3a41&language=en")
+
 .then(response => response.json())
 .then(data => {
 let totalpage= data.totalResults;
@@ -268,11 +270,11 @@ return th;
 
 ).then(totalPages=>{
 
-// // change
+
 createPagination( totalPages,page);
 })
 
-// change
+
 // js for pagination
 
 
@@ -288,7 +290,7 @@ createPagination( totalPages,page);
     function closePopup(i) {
       let popup = document.getElementById(`popup${i}`);
       popup.classList.remove("open-popup");
-     
+
     }
     
     $(document).mouseup(function(e){
@@ -303,12 +305,13 @@ function wpopup() {
   let popup = document.getElementById(`weatherpop`);
   popup.classList.add("openweatherpop");
 
+
   
 }
 function closeweatherpopup() {
   let popup = document.getElementById(`weatherpop`);
   popup.classList.remove("openweatherpop");
-  
+
 }
 $(document).mouseup(function(e){
   var container = $(".weatherpop");
