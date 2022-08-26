@@ -82,6 +82,7 @@ function myFunction1(newapi,a) {
 
       let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
       fetching(url1,newapi); 
+    
 }
 
 
@@ -90,6 +91,7 @@ function myFunction1(newapi,a) {
              
           let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&language=en";
           fetching(url1,newapi); 
+         
 }
 
 
