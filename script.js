@@ -82,8 +82,7 @@ function myFunction1(newapi,a) {
 
       let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&category="+name+"&language=en";
       fetching(url1,newapi); 
-     let page=1;
-      set(page);
+    
 }
 
 
@@ -92,8 +91,7 @@ function myFunction1(newapi,a) {
              
           let url1="https://newsdata.io/api/1/news?apikey="+newapi+"&language=en";
           fetching(url1,newapi); 
-          let page=1;
-      set(page);
+         
 }
 
 
@@ -259,8 +257,7 @@ element.innerHTML = liTag; //add li tag inside ul tag
 //reurn the li tag})
 
 }
-set(page);
-function set(page){
+
 let totalPages=fetch("https://newsdata.io/api/1/news?apikey=pub_106034d55252e54cc00f4b6ad3ff0c71c3a41&language=en")
 .then(response => response.json())
 .then(data => {
@@ -278,7 +275,7 @@ return th;
 createPagination( totalPages,page);
 })
 
-}
+
 // js for pagination
 
 
