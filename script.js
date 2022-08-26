@@ -45,7 +45,6 @@ function getWeatherData () {
 }
 
 function showWeatherData (data){
-    let {humidity, pressure, sunrise, sunset, wind_speed} = data.current;
 
     let otherDayForcast = ''
     data.daily.forEach((day, idx) => {
